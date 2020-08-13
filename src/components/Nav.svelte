@@ -1,5 +1,9 @@
 <script>
+  let isOpen = false;
   export let segment;
+  function toggleNav() {
+    isOpen = !isOpen;
+  }
 </script>
 
 <style>
@@ -15,13 +19,18 @@
     <a href="/" class="navbar-item">
       <img src="virus.png" alt="virus" />
     </a>
-    <span class="navbar-burger" aria-label="menu" aria-expanded="false">
+    <span
+      class="navbar-burger"
+      class:is-active={isOpen}
+      on:click={toggleNav}
+      aria-label="menu"
+      aria-expanded="false">
       <span aria-hidden="true" />
       <span aria-hidden="true" />
       <span aria-hidden="true" />
     </span>
   </div>
-  <div class="navbar-menu">
+  <div class="navbar-menu" class:is-active={isOpen}>
     <div class="navbar-start">
       <a href="/" class="navbar-item" class:is-active={segment === undefined}>
         Home

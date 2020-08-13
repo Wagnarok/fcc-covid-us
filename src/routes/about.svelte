@@ -5,6 +5,10 @@
 <div class="section header">
   <div class="container">
     <h1>About</h1>
-    <p>The data in this site</p>
+    <p>
+      The data in this site comes from
+      <a href="https://covidtracking.com">The Covid Tracking Project</a>
+      .
+    </p>
   </div>
 </div>

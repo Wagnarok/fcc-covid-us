@@ -32,7 +32,7 @@
     <h1>Covid-19</h1>
   </div>
 </div>
-<CovidStat />
+<CovidStat {...usStats} />
 
 <CovidChart />
 

@@ -3,10 +3,17 @@
 
   export async function preload() {
     try {
+      throw new Error();
       const usStats = await requests.usStats();
 
       return { usStats };
-    } catch (err) {}
+    } catch (err) {
+      this.error(
+        500,
+        'There was an unexpected error with the api, please try again later.'
+      );
+      return;
+    }
   }
 </script>
 

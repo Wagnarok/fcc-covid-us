@@ -3,7 +3,6 @@
 
   export async function preload() {
     try {
-      throw new Error();
       const usStats = await requests.usStats();
 
       return { usStats };

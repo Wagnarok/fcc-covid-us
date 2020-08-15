@@ -1,5 +1,6 @@
 <script context="module">
   import stateNames from '../data/stateNames.js';
+  import requests from '../data/request.js';
 
   export async function preload(page) {
     const state = page.params['state'];
@@ -9,7 +10,9 @@
     }
 
     try {
-      return { state: page.params['state'] };
+      const stats = await requests.stateStats(state);
+
+      return { state, stats };
     } catch (err) {
       this.error(
         500,
@@ -26,6 +29,7 @@
   import TableContainer from '../components/TableContainer.svelte';
 
   export let state;
+  export let stats;
 </script>
 
 <style>
@@ -43,6 +47,6 @@
   </div>
 </div>
 
-<CovidStat />
+<CovidStat {...stats} />
 
 <CovidChart />

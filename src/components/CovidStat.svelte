@@ -2,7 +2,7 @@
   export let cases;
   export let deaths;
   export let recovered;
-  export let ventilator;
+  export let ventilators;
   export let hospitalized;
   export let icu;
   export let tested;
@@ -31,7 +31,7 @@
       <h2 class="is-3 column">Tested: {tested}</h2>
       <h2 class="is-3 column">Hospitalized: {hospitalized}</h2>
       <h2 class="is-3 column">Total ICU: {icu}</h2>
-      <h2 class="is-3 column">Total Ventilator: {ventilator}</h2>
+      <h2 class="is-3 column">Total Ventilator: {ventilators}</h2>
     </div>
   </div>
 </div>
